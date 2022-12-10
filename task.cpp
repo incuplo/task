@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-void sort_arr_first(int* arr, int size_ar);     // создаём функции
+void sort_arr_first(int* arr, int size_ar);     
 void sort_arr_second(int* arr, int size_ar);
 void sort_arr_third(int* arr, int size_ar);
 
-int main(){      // главная функция, в которой создаём сам динамический массив
+int main(){      
     setlocale(0, "");
     int size_arr;
-    cout << "Введите количество элементов:";
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў:";
     cin >> size_arr;
     int* arr = new int[size_arr];
     for(int i = 0; i < size_arr; i++){
         cin >> arr[i];
     }
-    cout << "Введённый массив: ";
+    cout << "Г‚ГўГҐГ¤ВёГ­Г­Г»Г© Г¬Г Г±Г±ГЁГў: ";
     for (int q = 0; q < size_arr; q++){
-        cout << arr[q] << " ";   // вывод массива
+        cout << arr[q] << " ";   
     }
     cout << endl;
     sort_arr_first(arr, size_arr);
@@ -24,7 +24,7 @@ int main(){      // главная функция, в которой создаём сам динамический массив
     return 0;
 }
 
-void sort_arr_first(int* arr, int size_arr){     // функция, которая сортирует массив (метод пузырьком)
+void sort_arr_first(int* arr, int size_arr){     
 
     int temp;
     for (int j = 0; j < size_arr - 1; j++){
@@ -36,26 +36,26 @@ void sort_arr_first(int* arr, int size_arr){     // функция, которая сортирует м
             }
         }
     }
-    cout << "Отсортированный массив: ";
+    cout << "ГЋГІГ±Г®Г°ГІГЁГ°Г®ГўГ Г­Г­Г»Г© Г¬Г Г±Г±ГЁГў: ";
     for (int c = 0; c < size_arr; c++){
-        cout << arr[c] << " ";  // вывод массива
+        cout << arr[c] << " ";  
     }
     cout << endl;
     sort_arr_second(arr, size_arr);
     delete [] arr;
 }
 
-void sort_arr_second(int* arr, int size_arr){    // функция, которая умножает первую половину элементу на 2
+void sort_arr_second(int* arr, int size_arr){    
 
-    if(size_arr % 2 == 0){       // задаём условие, если количество элементов чётное, то количество делим поровну
+    if(size_arr % 2 == 0){      
         for(int t = 0; t < size_arr/2; t++){
-                arr[t] *= 2;        // первую половину умножаем на два
+                arr[t] *= 2;        
         }
         for(int k = size_arr/2; k < size_arr; k++){
-                arr[k] *= 1;    // чтобы оставить вторую половину неизменной, умножим элементы на единицу
+                arr[k] *= 1;   
         }
     }
-    if(size_arr % 2 == 1){       //если количество элементов нечётное, то количество округляем в большую сторону
+    if(size_arr % 2 == 1){       
         for(int t = 0; t < size_arr/2 + 1; t++){
                 arr[t] *= 2;
         }
@@ -63,16 +63,16 @@ void sort_arr_second(int* arr, int size_arr){    // функция, которая умножает пе
                 arr[k] *= 1;
         }
     }
-    cout << "Отсортированный массив в котором первую половину умножили на 2: ";
+    cout << "ГЋГІГ±Г®Г°ГІГЁГ°Г®ГўГ Г­Г­Г»Г© Г¬Г Г±Г±ГЁГў Гў ГЄГ®ГІГ®Г°Г®Г¬ ГЇГҐГ°ГўГіГѕ ГЇГ®Г«Г®ГўГЁГ­Гі ГіГ¬Г­Г®Г¦ГЁГ«ГЁ Г­Г  2: ";
     for (int kavo = 0; kavo < size_arr; kavo++){
-        cout << arr[kavo] << " ";   // вывод массива
+        cout << arr[kavo] << " ";   // ГўГ»ГўГ®Г¤ Г¬Г Г±Г±ГЁГўГ 
     }
     cout << endl;
     sort_arr_third(arr, size_arr);
     delete [] arr;
 }
 
-void sort_arr_third(int* arr, int size_arr){     // функция, которая вновь сортирует массив, где первую половину элементов умножили на два
+void sort_arr_third(int* arr, int size_arr){     
     int biba;
     for (int joji = 0; joji < size_arr - 1; joji++){
         for (int kek = 0; kek < size_arr - joji - 1; kek++){
@@ -83,9 +83,9 @@ void sort_arr_third(int* arr, int size_arr){     // функция, которая вновь сорти
             }
         }
     }
-    cout << "Готовый массив: ";
+    cout << "ГѓГ®ГІГ®ГўГ»Г© Г¬Г Г±Г±ГЁГў: ";
     for (int boba = 0; boba < size_arr; boba++){
-        cout << arr[boba] << " ";   // вывод массива
+        cout << arr[boba] << " ";   
     }
     cout << endl;
     delete [] arr;
